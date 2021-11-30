@@ -40,7 +40,7 @@ function Navbar(props) {
 Navbar.propTypes = {
   title: PropTypes.string,
   subtitle: PropTypes.string,
-  mode: PropTypes.object,
+  mode: PropTypes.string,
   toggleMode: PropTypes.object,
 };
 
