@@ -2,7 +2,6 @@ import React from "react";
 import { PropTypes } from "prop-types";
 
 const Card = (props) => {
-  console.log(props.Author);
   return (
     <div className="container my-3">
       <div className="card" style={{ width: "18rem" }}>
