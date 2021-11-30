@@ -1,7 +1,7 @@
 import CardHolder from "../src/components/typography/CardHolder";
-//import React from "react";
 import React, { useState } from "react";
 import Navbar from "../src/components/typography/Navbar";
+import Signup from "../src/components/typography/Signup";
 
 function App() {
   const [mode, setMode] = useState("light");
@@ -20,6 +20,7 @@ function App() {
     <>
       <Navbar title="Home" subtitle="Dashboard" mode={mode} toggleMode={toggleMode} />
       <CardHolder />
+      <Signup />
     </>
   );
 }
