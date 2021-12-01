@@ -99,7 +99,6 @@ const CardHolder = (props) => {
         <h4 className="text-center">List of Data</h4>
         <div className="row">
           {src.map((element, index) => {
-            console.log(element);
             return (
               <div className="col-md-4" key={index}>
                 <Card

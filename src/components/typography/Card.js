@@ -2,7 +2,6 @@ import React from "react";
 import { PropTypes } from "prop-types";
 
 const Card = (props) => {
-  console.log(props.Author);
   return (
     <div className="container my-3">
       <div className="card" style={{ width: "18rem" }}>
@@ -23,10 +22,10 @@ const Card = (props) => {
 };
 
 Card.propTypes = {
-  id: PropTypes.object,
-  imgUrl: PropTypes.object,
-  Author: PropTypes.object,
-  Width: PropTypes.object,
-  Height: PropTypes.object,
+  id: PropTypes.string,
+  imgUrl: PropTypes.string,
+  Author: PropTypes.string,
+  Width: PropTypes.number,
+  Height: PropTypes.number,
 };
 export default Card;
