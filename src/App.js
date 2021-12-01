@@ -1,9 +1,9 @@
 import CardHolder from "./pages/gallery/CardHolder";
 import React, { useState } from "react";
 import Navbar from "../src/components/navbar/Navbar";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import SignUp from "../src/pages/signup/SignUp";
 import Login from "../src/pages/login/Login";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
   const [mode, setMode] = useState("light");
