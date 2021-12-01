@@ -1,6 +1,6 @@
 import React from "react";
 
-const Signup = () => {
+const SignUp = () => {
   return (
     <div>
       <form className="dropdown-menu p-4">
@@ -32,15 +32,15 @@ const Signup = () => {
             type="password"
             className="form-control"
             id="exampleDropdownFormPassword3"
-            placeholder="Password"
+            placeholder="Confirm Password"
           />
         </div>
-        {/* <div className="form-check">
+        <div className="form-check">
           <input type="checkbox" className="form-check-input" id="dropdownCheck2" />
-          <label className="form-check-label" for="dropdownCheck2">
+          <label className="form-check-label" htmlFor="dropdownCheck2">
             Remember me
           </label>
-        </div> */}
+        </div>
         <button type="submit" className="btn btn-primary">
           Sign up
         </button>
@@ -49,4 +49,4 @@ const Signup = () => {
   );
 };
 
-export default Signup;
+export default SignUp;

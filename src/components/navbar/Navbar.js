@@ -14,17 +14,17 @@ function Navbar(props) {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <Link
-                  className="nav-link active"
-                  aria-current="page"
-                  to="../src/components/typography/CardHolder">
+                <Link className="nav-link active" aria-current="page" to="/">
                   {props.subtitle}
                 </Link>
               </li>
             </ul>
           </div>
-          <Link className="nav-link active" to="../src/components/typography/Signup">
+          <Link className="nav-link active" to="/signup">
             Sign Up
+          </Link>
+          <Link className="nav-link active" to="/login">
+            Login
           </Link>
           <div
             className={`form-check form-switch text-${props.mode === "light" ? "dark" : "light"}`}>
