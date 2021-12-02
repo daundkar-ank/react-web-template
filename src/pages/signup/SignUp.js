@@ -1,6 +1,11 @@
 import React from "react";
+import { useState } from "react";
 
 const SignUp = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [checked, setChecked] = useState(false);
+
   return (
     <div>
       <form className="dropdown-menu p-4">
@@ -12,7 +17,9 @@ const SignUp = () => {
           <label htmlFor="exampleDropdownFormEmail2">Email address</label>
           <input
             type="email"
+            value={email}
             className="form-control"
+            onChange={(e) => setEmail(e.target.value)}
             id="exampleDropdownFormEmail2"
             placeholder="email@example.com"
           />
@@ -21,7 +28,9 @@ const SignUp = () => {
           <label htmlFor="exampleDropdownFormPassword2">Password</label>
           <input
             type="password"
+            value={password}
             className="form-control"
+            onChange={(e) => setPassword(e.target.value)}
             id="exampleDropdownFormPassword2"
             placeholder="Password"
           />
@@ -36,12 +45,18 @@ const SignUp = () => {
           />
         </div>
         <div className="form-check">
-          <input type="checkbox" className="form-check-input" id="dropdownCheck2" />
+          <input
+            type="checkbox"
+            checked={checked}
+            onChange={(e) => setChecked(e.target.checked)}
+            className="form-check-input"
+            id="dropdownCheck2"
+          />
           <label className="form-check-label" htmlFor="dropdownCheck2">
             Remember me
           </label>
         </div>
-        <button type="submit" className="btn btn-primary">
+        <button type="submit" value="Submit" className="btn btn-primary">
           Sign up
         </button>
       </form>

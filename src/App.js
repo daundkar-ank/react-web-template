@@ -1,39 +1,28 @@
-import CardHolder from "./pages/gallery/CardHolder";
-import React, { useState } from "react";
-import Navbar from "../src/components/navbar/Navbar";
-import SignUp from "../src/pages/signup/SignUp";
-import Login from "../src/pages/login/Login";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-
+import React from "react";
+// import Navbar from "../src/components/navbar/Navbar";
+// import { useState } from "react";
+// import CardHolder from "./pages/gallery/CardHolder";
+// import SignUp from "./pages/signup/SignUp";
+import Router from "./router/index";
 function App() {
-  const [mode, setMode] = useState("light");
+  // const [mode, setMode] = useState("light");
 
-  const toggleMode = () => {
-    if (mode === "light") {
-      setMode("dark");
-      document.body.style.backgroundColor = "black";
-    } else {
-      setMode("light");
-      document.body.style.backgroundColor = "white";
-    }
-  };
+  // const toggleMode = () => {
+  //   if (mode === "light") {
+  //     setMode("dark");
+  //     document.body.style.backgroundColor = "black";
+  //   } else {
+  //     setMode("light");
+  //     document.body.style.backgroundColor = "white";
+  //   }
+  // };
 
   return (
     <>
-      <Router>
-        <Navbar title="Home" subtitle="Dashboard" mode={mode} toggleMode={toggleMode} />
-        <Switch>
-          <Route path="/">
-            <CardHolder />
-          </Route>
-          <Route path="/signup">
-            <SignUp />
-          </Route>
-          <Route path="/login">
-            <Login />
-          </Route>
-        </Switch>
-      </Router>
+      {/* <Navbar title="Home" subtitle="Dashboard" mode={mode} toggleMode={toggleMode} />
+      <CardHolder />
+      <SignUp /> */}
+      <Router />
     </>
   );
 }
