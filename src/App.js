@@ -1,8 +1,9 @@
 import CardHolder from "../src/components/typography/CardHolder";
-//import React from "react";
 import React, { useState } from "react";
 import Navbar from "../src/components/typography/Navbar";
+import { createContext } from "react";
 
+const themes = createContext();
 function App() {
   const [mode, setMode] = useState("light");
 
@@ -16,22 +17,17 @@ function App() {
     }
   };
 
-  // const getImg = async () => {
-  //   const responce = await fetch("https://picsum.photos/v2/list?page=2&limit=100");
-  //   const data = responce.json();
-  //   console.log(data);
-  // };
-
-  // useEffect(() => {
-  //   getImg();
-  // });
-
   return (
     <>
-      <Navbar title="Home" subtitle="Dashboard" mode={mode} toggleMode={toggleMode} />
-      <CardHolder />
+      <themes.Provider value={toggleMode}>
+        <Navbar title="Home" subtitle="Dashboard" mode={mode} />
+        <CardHolder />
+      </themes.Provider>
     </>
   );
 }
 
+// toggleMode={toggleMode}
+
 export default App;
+export { themes };

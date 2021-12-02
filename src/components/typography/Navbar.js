@@ -1,7 +1,11 @@
 import React from "react";
 import { PropTypes } from "prop-types";
+import { themes } from "src/App";
+import { useContext } from "react";
 
 function Navbar(props) {
+  const darkMode = useContext(themes);
+
   return (
     <div>
       <nav
@@ -23,7 +27,7 @@ function Navbar(props) {
             className={`form-check form-switch text-${props.mode === "light" ? "dark" : "light"}`}>
             <input
               className="form-check-input"
-              onClick={props.toggleMode}
+              onClick={darkMode}
               type="checkbox"
               id="flexSwitchCheckDefault"
             />
@@ -41,7 +45,7 @@ Navbar.propTypes = {
   title: PropTypes.string,
   subtitle: PropTypes.string,
   mode: PropTypes.string,
-  toggleMode: PropTypes.object,
+  // toggleMode: PropTypes.object,
 };
 
 export default Navbar;
