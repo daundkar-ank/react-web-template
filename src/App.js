@@ -16,6 +16,16 @@ function App() {
     }
   };
 
+  // const getImg = async () => {
+  //   const responce = await fetch("https://picsum.photos/v2/list?page=2&limit=100");
+  //   const data = responce.json();
+  //   console.log(data);
+  // };
+
+  // useEffect(() => {
+  //   getImg();
+  // });
+
   return (
     <>
       <Navbar title="Home" subtitle="Dashboard" mode={mode} toggleMode={toggleMode} />
