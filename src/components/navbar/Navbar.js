@@ -4,8 +4,7 @@ import { PropTypes } from "prop-types";
 function Navbar(props) {
   return (
     <div>
-      <nav
-        className={`navbar fixed-top navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}`}>
+      <nav className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}`}>
         <div className="container-fluid">
           <a className="navbar-brand" href="/">
             {props.title}
@@ -13,17 +12,14 @@ function Navbar(props) {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="/">
+                <a className="nav-link active" aria-current="page" href="/gal">
                   {props.subtitle}
                 </a>
               </li>
             </ul>
           </div>
-          <a className="nav-link active" href="/signup">
+          <a className="nav-link active" href="/">
             Sign Up
-          </a>
-          <a className="nav-link active" href="/login">
-            Login
           </a>
           <div
             className={`form-check form-switch text-${props.mode === "light" ? "dark" : "light"}`}>

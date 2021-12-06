@@ -95,7 +95,9 @@ const CardHolder = (props) => {
   ];
   return (
     <>
-      <div className="container my-3" style={{ color: props.mode === "dark" ? "white" : "black" }}>
+      <div
+        className="container mt-3 my-3"
+        style={{ color: props.mode === "dark" ? "white" : "black" }}>
         <h4 className="text-center">List of Data</h4>
         <div className="row">
           {src.map((element, index) => {
