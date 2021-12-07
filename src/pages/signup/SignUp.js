@@ -52,6 +52,7 @@ const SignUp = () => {
               onChange={(e) => setEmail(e.target.value)}
               aria-describedby="emailHelp"
               placeholder="Enter email"
+              required
             />
           </div>
           <div className="form-group ">
@@ -65,6 +66,7 @@ const SignUp = () => {
               id="exampleInputPassword1"
               onChange={(e) => setPassword(e.target.value)}
               placeholder="Password"
+              required
             />
           </div>
           <div className="form-group">
@@ -78,6 +80,7 @@ const SignUp = () => {
               className="form-control mb-2"
               id="exampleInputPassword2"
               placeholder="Confirm Password"
+              required
             />
           </div>
           <div className="form-check">

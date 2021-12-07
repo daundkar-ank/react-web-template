@@ -1,22 +1,6 @@
 import React from "react";
 import { useHistory } from "react-router";
 
-// const Cred = JSON.parse(localStorage.getItem("data"));
-
-// if (
-//   Cred.some((e) => {
-//     return e.email === email && e.password === password;
-//   })
-// ) {
-// }
-
-// const check = {
-//   email: "",
-//   password: "",
-//   isLoggedIn: Cred?.email && Cred?.password,
-//   error: "",
-// };
-
 const Login = () => {
   const history = useHistory();
 
