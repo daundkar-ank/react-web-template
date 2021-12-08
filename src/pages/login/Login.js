@@ -7,17 +7,19 @@ const Login = () => {
   const HandleForm = (e) => {
     e.preventDefault();
 
-    let email, password;
-    email = document.getElementById("exampleInputEmail1").value;
-    password = document.getElementById("exampleInputPassword1").value;
+    const info = {
+      email: document.getElementById("exampleInputEmail1").value,
+      password: document.getElementById("exampleInputPassword1").value,
+    };
+    console.log(info);
+    // let email, password;
+    // email = document.getElementById("exampleInputEmail1").value;
+    // password = document.getElementById("exampleInputPassword1").value;
 
-    const Cred = JSON.parse(localStorage.getItem("data"));
+    const Cred = JSON.parse(localStorage.getItem("key"));
+    console.log(Cred);
 
-    if (
-      Cred.some((e) => {
-        return e.email === email && e.password === password;
-      })
-    ) {
+    if (JSON.stringify(Cred) === JSON.stringify(info)) {
       history.replace("/gal");
     } else {
       alert("Login Failed");

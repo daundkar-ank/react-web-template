@@ -1,39 +1,38 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useHistory } from "react-router";
 
-const getData = () => {
-  let auth = localStorage.getItem("data");
-
-  if (auth) {
-    return JSON.parse(localStorage.getItem("data"));
-  } else {
-    return [];
-  }
-};
+// const getData = () => {
+//   let auth = localStorage.getItem("key");
+//   console.log(auth);
+//   if (auth) {
+//     return JSON.parse(auth);
+//   } else {
+//     return [];
+//   }
+// };
 
 const SignUp = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [confirmpwd, setConfirmpwd] = useState("");
-  const [checked, setChecked] = useState("");
 
-  const [user, setUser] = useState(getData());
+  // const [user, setUser] = useState(getData());
   const history = useHistory();
 
   const HandleForm = (e) => {
     e.preventDefault();
 
-    const newUser = { email: email, password: password, confirmpwd: confirmpwd };
+    localStorage.setItem("key", JSON.stringify({ email, password }));
 
-    setUser([...user, newUser]);
-    console.log(user);
+    // const newUser = { email: email, password: password };
+
+    // setUser([...user, newUser]);
     history.replace("/login");
   };
 
-  useEffect(() => {
-    localStorage.setItem("data", JSON.stringify(user));
-  }, [user]);
+  // useEffect(() => {
+  //   localStorage.setItem("key", JSON.stringify(user));
+  // }, [user]);
 
   return (
     <div className="d-flex justify-content-center mt-5">
@@ -75,8 +74,6 @@ const SignUp = () => {
               type="password"
               name="cpassword"
               autoComplete="off"
-              value={confirmpwd}
-              onChange={(e) => setConfirmpwd(e.target.value)}
               className="form-control mb-2"
               id="exampleInputPassword2"
               placeholder="Confirm Password"
@@ -85,11 +82,7 @@ const SignUp = () => {
           </div>
           <div className="form-check">
             <input type="checkbox" className="form-check-input" id="exampleCheck1" />
-            <label
-              className="form-check-label mb-3"
-              checked={checked}
-              onChange={(e) => setChecked(e.target.checked)}
-              htmlFor="exampleCheck1">
+            <label className="form-check-label mb-3" htmlFor="exampleCheck1">
               Remember Me
             </label>
           </div>

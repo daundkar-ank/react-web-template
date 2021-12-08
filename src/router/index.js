@@ -4,8 +4,6 @@ import { useState } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { menuItem } from "./routes";
 
-// const Cred = JSON.parse(localStorage.getItem("data"));
-
 const Router = () => {
   const [mode, setMode] = useState("light");
 
