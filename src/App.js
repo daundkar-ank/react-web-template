@@ -3,7 +3,8 @@ import React, { useState } from "react";
 import Navbar from "../src/components/typography/Navbar";
 import { createContext } from "react";
 
-const themes = createContext();
+const Themes = createContext();
+const DefaultTheme = createContext();
 function App() {
   const [mode, setMode] = useState("light");
 
@@ -19,10 +20,12 @@ function App() {
 
   return (
     <>
-      <themes.Provider value={toggleMode}>
-        <Navbar title="Home" subtitle="Dashboard" mode={mode} />
-        <CardHolder />
-      </themes.Provider>
+      <Themes.Provider value={toggleMode}>
+        <DefaultTheme.Provider value={mode}>
+          <Navbar title="Home" subtitle="Dashboard" />
+          <CardHolder />
+        </DefaultTheme.Provider>
+      </Themes.Provider>
     </>
   );
 }
@@ -30,4 +33,4 @@ function App() {
 // toggleMode={toggleMode}
 
 export default App;
-export { themes };
+export { Themes, DefaultTheme };

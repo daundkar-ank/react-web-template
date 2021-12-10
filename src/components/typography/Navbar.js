@@ -1,15 +1,15 @@
 import React from "react";
 import { PropTypes } from "prop-types";
-import { themes } from "src/App";
+import { Themes, DefaultTheme } from "src/App";
 import { useContext } from "react";
 
 function Navbar(props) {
-  const darkMode = useContext(themes);
+  const darkMode = useContext(Themes);
+  const mode = useContext(DefaultTheme);
 
   return (
     <div>
-      <nav
-        className={`navbar fixed-top navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}`}>
+      <nav className={`navbar fixed-top navbar navbar-expand-lg navbar-${mode} bg-${mode}`}>
         <div className="container-fluid">
           <a className="navbar-brand" href="/">
             {props.title}
@@ -23,8 +23,7 @@ function Navbar(props) {
               </li>
             </ul>
           </div>
-          <div
-            className={`form-check form-switch text-${props.mode === "light" ? "dark" : "light"}`}>
+          <div className={`form-check form-switch text-${mode === "light" ? "dark" : "light"}`}>
             <input
               className="form-check-input"
               onClick={darkMode}
@@ -44,8 +43,6 @@ function Navbar(props) {
 Navbar.propTypes = {
   title: PropTypes.string,
   subtitle: PropTypes.string,
-  mode: PropTypes.string,
-  // toggleMode: PropTypes.object,
 };
 
 export default Navbar;
