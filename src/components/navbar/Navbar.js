@@ -16,6 +16,11 @@ function Navbar(props) {
                   {props.subtitle}
                 </a>
               </li>
+              <li>
+                <a className="nav-link active" aria-current="page" href="/counter">
+                  Counter
+                </a>
+              </li>
             </ul>
           </div>
           <a className="nav-link active" href="/">
