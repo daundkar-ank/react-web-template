@@ -5,8 +5,8 @@
 
 import { API } from "./endpoints";
 import { ServerConfig } from "./serverConfig";
-import { AppDispatcher } from "@redux";
-import { RootNavigator } from "@navigators";
+import AppDispatcher from "../redux/dispatchers/appDispatcher";
+// import { RootNavigator } from "navigator";
 
 export async function refreshToken(refreshToken) {
   try {
@@ -21,11 +21,11 @@ export async function refreshToken(refreshToken) {
       AppDispatcher.updateUserTokens(response.data);
     } else {
       AppDispatcher.setUserLoggedOut();
-      RootNavigator.reset({ index: 0, routes: [{ name: "Login" }] });
+      // RootNavigator.reset({ index: 0, routes: [{ name: "Login" }] });
     }
   } catch (err) {
     console.log(err);
   } finally {
-    return;
+    // return "";
   }
 }

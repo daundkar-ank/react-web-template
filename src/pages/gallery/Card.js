@@ -5,8 +5,7 @@ const Card = (props) => {
   return (
     <div className="container my-3">
       <div className="card" style={{ width: "18rem" }}>
-        <h4 className="card-title text-center my-3">Profile</h4>
-        <p className="text-center">{props.id}</p>
+        <p className="text-center mt-3">{props.id}</p>
         <div className="mx-3 my-3">
           <img src={props.imgUrl} height="200px" className="card-img-top" alt="..." />
         </div>

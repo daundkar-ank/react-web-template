@@ -1,6 +1,17 @@
-// import Actions from "../actions/appActions";
-
 const initialState = 0;
+const APIState = {
+  Api: [],
+};
+
+export const ApiReducer = (state = APIState, { type, payload }) => {
+  switch (type) {
+    case "FetchAPI":
+      return { ...state, Api: payload };
+
+    default:
+      return state;
+  }
+};
 
 const AppReducer = (state = initialState, action) => {
   switch (action.type) {
@@ -14,37 +25,5 @@ const AppReducer = (state = initialState, action) => {
       return state;
   }
 };
-
-// let initialState = {
-//   user: {},
-//   authToken: null,
-//   isLogged: false,
-//   introCompleted: false,
-//   defaultActiveTab: 0,
-//   isFreshUser: false,
-// };
-// const AppReducer = (state = initialState, action) => {
-//   switch (action.type) {
-//     case Actions.LOGIN:
-//       return {
-//         ...state,
-//         user: action.data,
-//       };
-//     case Actions.LOGOUT:
-//       return {
-//         ...state,
-//         isLogged: false,
-//         authToken: null,
-//       };
-//     case Actions.SET_TOKEN:
-//       return {
-//         ...state,
-//         authToken: action.data,
-//         isLogged: true,
-//       };
-//     default:
-//       return state;
-//   }
-// };
 
 export default AppReducer;
