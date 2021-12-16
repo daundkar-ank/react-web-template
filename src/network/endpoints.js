@@ -11,4 +11,5 @@ export const API = {
   AUTH: {
     LOGIN: new Endpoint("/auth", HTTP_METHODS.POST),
   },
+  IMG: new Endpoint("https://picsum.photos/v2/list", HTTP_METHODS.POST),
 };
